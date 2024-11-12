@@ -2,6 +2,7 @@
 "use client"; // <-- Add this line at the top
 
 import { Button } from "@nextui-org/react";
+import MembershipFormPage from "./(joinTheMembership)/MembershipFormPage/page";
 
 const Page = () => {
   return (
@@ -22,4 +23,3 @@ const Page = () => {
 };
 
 export default Page;
-
