@@ -74,7 +74,6 @@ const MessageBox = () => {
 
             </div>
 
-
         </div>
 
 
