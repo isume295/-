@@ -13,9 +13,9 @@ const Page = () => {
           fontWeight: "bold",
           padding: "10px 20px",
         }}
-        onClick={() => alert("Button with style prop clicked!")}
+        onClick={() => alert("Use the routes to check the other pages.")}
       >
-        Button with style prop
+        Hello, Faysel
       </Button>
     </div>
   );
