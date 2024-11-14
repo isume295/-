@@ -33,7 +33,7 @@ const MyActivities = () => {
 
             setCurrentData(ActivityTable.slice(start, end));
             return ActivityTable.slice(start, end);
-        }, [page, ActivityTable, 10, rowsPerPage]);
+        }, [page, rowsPerPage]);
       // Selection Logic
       const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
       const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<

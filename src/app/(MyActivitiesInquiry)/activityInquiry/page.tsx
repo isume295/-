@@ -32,7 +32,7 @@ const ActivityInquiry = () => {
 
             setCurrentData(ActivityInquiryTable.slice(start, end));
             return ActivityInquiryTable.slice(start, end);
-        }, [page, ActivityInquiryTable, 10, rowsPerPage]);
+        }, [page, rowsPerPage]);
   return (
     <div className="min-h-[1117px] flex flex-col items-center justify-between"> 
       {/* Include Header */}
