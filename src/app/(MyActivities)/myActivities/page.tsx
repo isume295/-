@@ -9,17 +9,7 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Paginat
 import { PaymentData } from "@/assets/paymentDataT1";
 
 const MyActivities = () => {
-    const [page, setPage] = React.useState(1);
-    const rowsPerPage = 10;
-
-    const pages = Math.ceil(PaymentData.length / rowsPerPage);
-
-    const items = React.useMemo(() => {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
-
-        return PaymentData.slice(start, end);
-    }, [page, PaymentData]);
+    
 
   return (
     <div className="min-h-[1117px] flex flex-col items-center justify-between"> 
@@ -57,40 +47,7 @@ const MyActivities = () => {
                 </div>
 
                 <div className='w-[1080px] h-[484px]'>
-                    <Table 
-                    aria-label="Example table with client side pagination"
-                    bottomContent={
-                    <div className="flex w-full justify-center">
-                        <Pagination
-                        isCompact
-                        showControls
-                        showShadow
-                        color="default"
-                        page={page}
-                        total={pages}
-                        onChange={(page) => setPage(page)}
-                        />
-                    </div>
-                    }
-                    classNames={{
-                    wrapper: " min-h-[222px] shadow-none rounded-none",
-                    }}
-                >
-                    <TableHeader>
-                    <TableColumn key="name"   className='text-center'>NAME</TableColumn>
-                    <TableColumn key="role"   className='text-center'>ROLE</TableColumn>
-                    <TableColumn key="status" className='text-center'>STATUS</TableColumn>
-                    <TableColumn key="status" className='text-center'>AGE</TableColumn>
-
-                    </TableHeader>
-                    <TableBody className='items-center justify-center border-b' items={items}>
-                    {(item) => (
-                        <TableRow key={item.name}>
-                        {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-                        </TableRow>
-                    )}
-                    </TableBody>
-                </Table>
+                    
                 </div>
                 </div>
 
