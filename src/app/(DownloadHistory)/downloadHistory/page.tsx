@@ -32,7 +32,7 @@ const TicketAndPaymentDetails = () => {
 
             setCurrentData(DownloadHistory.slice(start, end));
             return DownloadHistory.slice(start, end);
-        }, [page, DownloadHistory, 10, rowsPerPage]);
+        }, [page, rowsPerPage]);
   return (
     <div className="min-h-[1117px] flex flex-col items-center justify-between"> 
       {/* Include Header */}
