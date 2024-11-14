@@ -150,61 +150,7 @@ const HighSchoolMaterials = () => {
 
                 {/* Bottom  */}
                 <div className='w-[824px] h-[765px] gap-[24px]'>
-                    <article className="mt-5">
-                            <Table
-                                aria-label="Data Table"
-                                shadow="none"
-                                classNames={{
-                                th: [
-                                    "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center",
-                                ],
-                                td: ["px-6  text-center font-normal text-base text-[#363941] "],
-                                }}
-                                bottomContent={
-                                <div className="flex w-full justify-center  mt-8">
-                                    <Pagination
-                                    isCompact
-                                    showControls
-                                    showShadow
-                                    color="secondary"
-                                    page={page}
-                                    total={pages}
-                                    onChange={(page) => setPage(page)}
-                                    />
-                                </div>
-                                }
-                            >
-                                <TableHeader>
-                                
-
-                                <TableColumn>번호</TableColumn>
-                                <TableColumn>닉네임</TableColumn>
-                                <TableColumn>휴대폰번호</TableColumn>
-                                <TableColumn>로그인</TableColumn>
-                                <TableColumn>가입일</TableColumn>
-                                {/* <TableColumn>상세보기</TableColumn> */}
-                                </TableHeader>
-                                <TableBody>
-                                {items.map((row) => (
-                                    <TableRow key={row.id} className="border-b-1">
-                                    <TableCell>{row.number}</TableCell>
-                                    <TableCell>{row.nickname}</TableCell>
-                                    <TableCell>{row.phoneNumber}</TableCell>
-                                    <TableCell>{row.logIn}</TableCell>
-                                    <TableCell>{row.joinDate}</TableCell>
-                                    {/* <TableCell>
-                                        <Link
-                                        href="/admin/membership/membership-management/1"
-                                        className="text-mainPurple underline underline-offset-2"
-                                        >
-                                        {row.viewDetails}
-                                        </Link>
-                                    </TableCell> */}
-                                    </TableRow>
-                                ))}
-                                </TableBody>
-                            </Table>
-                    </article>
+                    
 
 
                 </div>

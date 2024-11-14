@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import { Button, Card, CardBody } from '@nextui-org/react';    
 import Image from 'next/image'; 
 import React from "react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, getKeyValue} from "@nextui-org/react";
 import { PaymentData } from "@/assets/paymentDataT1";
 
 const TicketAndPaymentDetails = () => {
@@ -44,7 +43,7 @@ const TicketAndPaymentDetails = () => {
                 </div>
 
                 <div className='w-[1080px] h-[484px]'>
-                    
+
                 </div>
             </div>
 
