@@ -89,24 +89,27 @@ const MyActivities = () => {
                       td: ["py-[10px] px-[40px] text-[14px]  text-center font-normal text-base text-[#363941] "],
                     }}
                     bottomContent={
-                      <div className="flex flex-col items-center w-full justify-center space-y-1">
-                        <div className='flex items-end justify end'>
-                          <Button className='w-[56px] h-[36px] rounded-md py-[8px] px-[16px] bg-[#353A46] text-white'>
+                      <div className="flex flex-col w-full">
+                        <div className="flex justify-end w-full mb-1">
+                          <Button className="w-[56px] h-[36px] rounded-md py-[8px] px-[16px] bg-[#353A46] text-white">
                             삭제
                           </Button>
                         </div>
                         
-                        <Pagination
-                          isCompact
-                          showControls
-                          showShadow
-                          color="primary"
-                          page={page}
-                          total={pages}
-                          onChange={(page) => setPage(page)}
-                        />
+                        <div className='flex justify-center w-full'>
+                          <Pagination
+                            isCompact
+                            showControls
+                            showShadow
+                            color="primary"
+                            page={page}
+                            total={pages}
+                            onChange={(page) => setPage(page)}
+                          />
+                        </div>
                       </div>
                     }
+                    
                   >
                     <TableHeader>
                       <TableColumn className="flex justify-center items-center">
