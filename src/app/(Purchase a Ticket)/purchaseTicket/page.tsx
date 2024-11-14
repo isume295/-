@@ -119,7 +119,7 @@ const purchaseTicket = () => {
                     <Card className="w-[534px] h-[94px] shadow-sm rounded-xl border">
                             <CardBody className="flex flex-col items-center justify-center gap-[5px]">
                                 <div className="w-[494px] h-[54px] flex flex-row items-center justify-between">
-                                    {/*RIGHT */}
+                                    {/*LEFT */}
                                         <div className='w-[306px] flex flex-col items-center justify-center gap-[5px]'>
                                             <div className="flex flex-row items-center justify-between w-[307px]">
                                                 <p className=" font-semibold text-[20px]">중고등 연회원</p>
@@ -130,7 +130,7 @@ const purchaseTicket = () => {
                                             </div>
                                         </div>
 
-                                    {/* LEFT */}
+                                    {/* RIGHT */}
 
                                         <div className='w-[188px] h-[44px] flex flex-row items-center justify-end gap-[10px]'>
                                             <div>
@@ -146,7 +146,7 @@ const purchaseTicket = () => {
                     </Card>
                 </div>
 
-                <div>
+                <div className='w-full items-start justify-start'>
                     <p className='text-[14px] text-[#868F9A] '>개별 작품 구매는 구매할 자료를 장바구니에 담아서 구매하실 수 있습니다.</p>
                 </div>
 
