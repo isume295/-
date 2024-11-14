@@ -1,3 +1,5 @@
+// eslint-disable react-hooks/exhaustive-deps
+
 'use client';
 
 import Header from '@/components/Header';
