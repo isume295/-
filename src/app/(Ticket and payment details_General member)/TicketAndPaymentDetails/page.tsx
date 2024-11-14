@@ -32,7 +32,7 @@ const TicketAndPaymentDetails = () => {
 
             setCurrentData(PaymentData.slice(start, end));
             return PaymentData.slice(start, end);
-        }, [page, PaymentData, 10, rowsPerPage]);
+        }, [page, rowsPerPage]);
 
   return (
     <div className="min-h-[1117px] flex flex-col items-center justify-between"> 
