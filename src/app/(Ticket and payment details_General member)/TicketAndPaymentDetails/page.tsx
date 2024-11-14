@@ -39,6 +39,7 @@ const TicketAndPaymentDetails = () => {
       {/* Include Header */}
       <Header />
 
+
       <hr className="w-full border-t-1 border-[rgb(207,212,218)]  py-2"/>
 
       {/* Form Container */}
