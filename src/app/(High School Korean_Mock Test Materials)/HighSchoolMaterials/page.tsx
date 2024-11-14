@@ -33,7 +33,7 @@ const HighSchoolMaterials = () => {
 
             setCurrentData(PaymentData.slice(start, end));
             return PaymentData.slice(start, end);
-        }, [page, PaymentData, 10, rowsPerPage]);
+        }, [page, rowsPerPage]);
 
       
   return (
