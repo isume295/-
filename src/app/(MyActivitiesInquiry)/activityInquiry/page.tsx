@@ -4,12 +4,35 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button, Card, CardBody } from '@nextui-org/react';    
 import Image from 'next/image'; 
-import React from "react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, getKeyValue} from "@nextui-org/react";
-import { PaymentData } from "@/assets/paymentDataT1";
+import { useState, useMemo } from "react";
+import { ActivityInquiryTable } from "@/assets/actiivityInquiryT1";
+import {
+    Table,
+    TableHeader,
+    TableColumn,
+    TableBody,
+    TableRow,
+    TableCell,
+    Pagination,
+  } from "@nextui-org/react";
 
 const ActivityInquiry = () => {
+        // Pagination Logic
+        const [page, setPage] = useState(1); 
 
+        const rowsPerPage = 15
+
+        const pages = Math.ceil(ActivityInquiryTable.length / rowsPerPage);
+
+        const [currentData, setCurrentData] = useState<any>();
+
+        const items = useMemo(() => {
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+
+            setCurrentData(ActivityInquiryTable.slice(start, end));
+            return ActivityInquiryTable.slice(start, end);
+        }, [page, ActivityInquiryTable, 10, rowsPerPage]);
   return (
     <div className="min-h-[1117px] flex flex-col items-center justify-between"> 
       {/* Include Header */}
@@ -18,7 +41,7 @@ const ActivityInquiry = () => {
       <hr className="w-full border-t-1 border-[rgb(207,212,218)]  py-2"/>
 
       {/* Form Container */}
-      <div className="flex flex-col items-center justify-start w-[428px] h-[293px] gap-[10px] mt-10 mb-10 flex-1">
+      <div className="flex flex-col items-center justify-start w-[428px] h-[293px] gap-[10px] mt-10 mb-96 flex-1">
             <h2 className="w-[428px] h-[34px] text-center text-[24px] font-semibold text-black">마이페이지</h2>
 
             {/* ----- ---- --- TOP  --- ----- ------*/}
@@ -41,14 +64,55 @@ const ActivityInquiry = () => {
             <div className='flex flex-col items-center justify-center w-[1080px] h-[582px] gap-[8px]'>
 
                 <div className="flex flex-row items-center justify-center w-full gap-[12px]">
-                    <div className=' border border-[#868F9A]  text-[#868F9A] px-[12px] py-[10px] text-[14px] rounded-full'>YTWFqsFWQ</div>
-                    <div className=' border border-[#42A8FD] bg-blue-100 font-bold text-[#42A8FD]  px-[12px] py-[10px] text-[14px] rounded-full'>YTWFqsFWQ</div>
+                    <div className=' border border-[#868F9A]  text-[#868F9A] px-[12px] py-[10px] text-[14px] rounded-full'>나의 게시글</div>
+                    <div className=' border border-[#42A8FD] bg-blue-100 font-bold text-[#42A8FD]  px-[12px] py-[10px] text-[14px] rounded-full'>1:1 문의</div>
                 </div>
 
                 <div className='w-[1080px] h-[484px]'>
+                <article className="m-0">
+                            <Table
+                            aria-label="Data Table"
+                            shadow="none"
+                            classNames={{
+                                th: [
+                                "relative px-[40px] py-[12px] font-bold text-[14px] bg-[#F3F4F6] text-[#868F9A] h-[44px] text-center",
+                                "after:content-[''] after:absolute after:right-0 after:top-2 after:bottom-2 after:w-[1px] after:bg-gray-300",
+                                ],
+                                td: ["px-6 text-[14px] text-center font-normal text-base text-[#363941]"],
+                            }}
+                            bottomContent={
+                                <div className="flex w-full justify-center mt-8">
+                                <Pagination
+                                    isCompact
+                                    showControls
+                                    showShadow
+                                    color="primary"
+                                    page={page}
+                                    total={pages}
+                                    onChange={(page) => setPage(page)}
+                                />
+                                </div>
+                            }
+                            >
+                            <TableHeader>
+                                <TableColumn>제목</TableColumn>
+                                <TableColumn>작성일</TableColumn>
+                                <TableColumn>상태</TableColumn>
+                            </TableHeader>
+                            <TableBody>
+                                {items.map((row) => (
+                                <TableRow key={row.id} className="border-b-1">
+                                    <TableCell>{row.title}</TableCell>
+                                    <TableCell>{row.creationDate}</TableCell>
+                                    <TableCell>{row.situation}</TableCell>
+                                </TableRow>
+                                ))}
+                            </TableBody>
+                            </Table>
+                        </article>
                     
                 </div>
-                </div>
+            </div>
 
 
         
