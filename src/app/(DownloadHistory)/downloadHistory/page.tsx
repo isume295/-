@@ -152,5 +152,3 @@ const TicketAndPaymentDetails = () => {
 }
 
 export default TicketAndPaymentDetails;
-
-0
