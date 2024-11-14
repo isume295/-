@@ -10,23 +10,27 @@ const ManageInfo = () => {
       {/* Include Header */}
       <Header />
 
-      <hr className="w-full border-t-1 border-[rgb(207,212,218)]  py-5 "/>
+      <hr className="w-full border-t-1 border-[rgb(207,212,218)]  py-2"/>
 
       {/* Form Container */}
-      <div className="flex flex-col items-center justify-start w-[428px] h-[293px] gap-[40px] mt-10 mb-10 flex-1">
-
-        <div className='flex flex-cols items-center justify-center w-[1728px] h-[108px] border'>
+      <div className="flex flex-col items-center justify-start w-[428px] h-[293px] gap-[10px] mt-10 mb-10 flex-1">
             <h2 className="w-[428px] h-[34px] text-center text-[24px] font-semibold text-black">마이페이지</h2>
 
-            <div className='flex flex-row items-center justify-between gap-[60px]'>
+            <div className='flex flex-cols items-center justify-center w-[1728px] h-[108px]'>
 
-                <div className='border-b-3 border-[#42A8FD] text-[#42A8FD] pb-3 '>내 정보 관리</div>
-                <div className='text-[#868F9A]'>이용권 및 결제 내역</div>
-                <div className='text-[#868F9A]'>다운로드 내역</div>
-                <div className='text-[#868F9A]'>나의 활동</div>
+                {/* Full-width border container */}
+            <div className="w-full flex justify-center border-b border-[rgb(207,212,218)]">
+                {/* Inner content container */}
+                <div className="flex flex-row items-center justify-between gap-[60px]">
+                    <div className="border-b-4 border-[#42A8FD] text-[#42A8FD] pb-3 font-bold">내 정보 관리</div>
+                    <div className="text-[#868F9A] pb-3 font-bold">이용권 및 결제 내역</div>
+                    <div className="text-[#868F9A] pb-3 font-bold">다운로드 내역</div>
+                    <div className="text-[#868F9A] pb-3 font-bold">나의 활동</div> 
+                </div>
+            </div>
+
                 
             </div>
-        </div>
 
         
 
@@ -109,13 +113,16 @@ const ManageInfo = () => {
                 />
             </div>
 
-
+            <div className="flex flex-col items-center justify-center gap-[20px]">
                 {/* Submit Button */}
                 <Button className="w-[428px] h-[42px] px-[20px] py-[10px] bg-[#42A8FD] hover:bg-[#489de2] font-semibold text-white rounded-md">
-                        가입하기
+                        수정하기
                 </Button>
 
-                <p>탈퇴하기</p>
+                <p className='text-[14px] text-[#868F9A] pb-2'>탈퇴하기</p>
+            </div>
+
+                
         </div>
         
       </div>
