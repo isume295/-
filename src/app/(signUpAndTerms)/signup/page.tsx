@@ -22,14 +22,14 @@ const SignUp = () => {
           <div className="flex flex-col items-start w-[428px] gap-[10px] flex-grow">
             <CheckboxGroup>
               <div className="flex items-center justify-between w-full">
-                <Checkbox  className="py-[12px] text-[22px]" value="terms">
+                <Checkbox defaultSelected className="py-[12px] text-[22px]" value="terms">
                     전체 동의
                 </Checkbox>
               </div>
               <hr className="w-full border-t-1 border-[rgb(207,212,218)]" />
 
               <div className="flex items-center justify-between w-[428px]">
-                <Checkbox color="default" className="py-[12px] text-[22px]" value="privacy">
+                <Checkbox defaultSelected color="default" className="py-[12px] text-[22px]" value="privacy">
                     (필수) 개인정보처리방침
                 </Checkbox>
                 <Image
@@ -41,7 +41,7 @@ const SignUp = () => {
                 />
               </div>
               <div className="flex items-center justify-between w-full">
-                <Checkbox color="default" className="py-[12px] text-[22px]" value="newsletter">
+                <Checkbox defaultSelected color="default" className="py-[12px] text-[22px]" value="newsletter">
                     (필수) 서비스이용약관
                 </Checkbox>
                 <Image
@@ -52,7 +52,7 @@ const SignUp = () => {
                 />
               </div>
               <div className="flex items-center justify-between w-full">
-                <Checkbox color="default" className="py-[12px] text-[22px]" value="updates">
+                <Checkbox defaultSelected color="default" className="py-[12px] text-[22px]" value="updates">
                     (선택) 마케팅 수신 동의
                 </Checkbox>
                 <Image
