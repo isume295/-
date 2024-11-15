@@ -60,35 +60,33 @@ const SearchWithinBullet = () => {
 
             {/* RightSide */}
             <div className='flex flex-col items-center justify-center w-[824px] h-[969px] pt-[24px] pb-[24px] gap-[40px]'>
-                {/* Top  */}
+                {/* Top */}
                 <div className='flex flex-col items-center justify-center w-[824px] h-[56px] py-4 gap-[12px]'>
-                    <div className='flex flex-col items-center justify-center w-[824px] h-[34px] '>
+                    <div className='flex flex-col items-center justify-center w-[824px] h-[34px]'>
                         <h3 className='font-bold text-[24px]'>검색 결과</h3>
                     </div>
 
                     {/* Input and Button Row */}
-                    <div className="flex flex-row items-center justify-center w-[564px] h-[40px] gap-[12px]">
-                        {/* Input Field */}
+                    <div className="flex flex-row items-center justify-center w-[564px] h-[44px] gap-[12px]">
+                        {/* Dropdown */}
                         <DropDown
                             options={options}
                             defaultSelectedKeys='1'
-                            selectStyles="w-[125px] h-[44px]" 
-                            insideStyles='px-[16px]  rounded-md'
+                            selectStyles="w-[125px] h-full" 
+                            insideStyles='px-[16px] rounded-md'
                         />
 
-
+                        {/* Input Field */}
                         <InputNoLabel
                             placeholder="사미인곡"
-                            inputParentStyles="w-[353px] rounded-md  px-[16px] py-[10px] h-[40px] "
+                            inputParentStyles="w-[353px] h-full rounded-md px-[16px]"
                         />
                         
                         {/* Button */}
-                        <Button className="w-[64px] h-full px-[20px] py-[10px] bg-[#ECEDF1] text-[#868F9A] rounded-md">
+                        <Button className="w-[64px] h-full px-[20px] bg-[#ECEDF1] text-[#868F9A] rounded-md">
                             검색
                         </Button>
                     </div>
-                    
-
                 </div>
 
                 
