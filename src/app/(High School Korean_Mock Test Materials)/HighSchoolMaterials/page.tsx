@@ -4,8 +4,9 @@ import {useState, useMemo} from 'react'
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Sidebar from '@/components/Sidebar';
-import { Checkbox } from "@nextui-org/react";
-import {PaymentData}  from '@/assets/paymentDataT1';
+import { Checkbox, Button } from "@nextui-org/react";
+import {HighSchoolMaterialTable}  from '@/assets/HighschoolMaterialT1';
+import Image from 'next/image'; 
 import {
     Table,
     TableHeader,
@@ -18,12 +19,12 @@ import {
     
 
 const HighSchoolMaterials = () => {
-      // Pagination Logic
-        const [page, setPage] = useState(1);
+        // Pagination Logic
+        const [page, setPage] = useState(1); 
 
-        const rowsPerPage = 10
+        const rowsPerPage = 15
 
-        const pages = Math.ceil(PaymentData.length / rowsPerPage);
+        const pages = Math.ceil(HighSchoolMaterialTable.length / rowsPerPage);
 
         const [currentData, setCurrentData] = useState<any>();
 
@@ -31,9 +32,14 @@ const HighSchoolMaterials = () => {
             const start = (page - 1) * rowsPerPage;
             const end = start + rowsPerPage;
 
-            setCurrentData(PaymentData.slice(start, end));
-            return PaymentData.slice(start, end);
+            setCurrentData(HighSchoolMaterialTable.slice(start, end));
+            return HighSchoolMaterialTable.slice(start, end);
         }, [page, rowsPerPage]);
+      // Selection Logic
+      const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
+      const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
+        number[]
+      >([]);
 
       
   return (
@@ -150,8 +156,164 @@ const HighSchoolMaterials = () => {
 
                 {/* Bottom  */}
                 <div className='w-[824px] h-[765px] gap-[24px]'>
-                    
+                    <article className="">
+                        <Table
+                            aria-label="Data Table"
+                            shadow="none"
+                            classNames={{
+                            th: [
+                                "relative px-[40px] py-[10px] font-bold text-[14px] bg-[#F3F4F6] text-[#868F9A] w-full h-[41px] text-center",
+                                "after:content-[''] after:absolute after:right-0 after:top-2 after:bottom-2 after:w-[1px] after:bg-gray-300",
+                            ],
+                            td: ["py-[10px] w-full h-[40px] px-[20px] text-[14px] text-center font-normal text-base text-[#363941] "],
+                            }}
+                            bottomContent={
+                            <div className="flex flex-col w-full">
+                                <div className="flex flex-row items-center justify-between  w-[462px] h-[42px] mb-4">
+                                <Button className="w-[221px] h-[42px] font-bold rounded-md py-[10px] px-[24px] bg-[#42A8FD] text-white">
+                                    <Image
+                                            src="/assets/Icons/whiteBag.svg"
+                                            alt="Clip Image"
+                                            width={20}
+                                            height={20}
+                                        />
+                                    선택파일 장바구니 담기
+                                </Button>
+                                <Button className="w-[221px] h-[42px] font-bold rounded-md py-[10px] px-[20px] bg-[#42A8FD] text-white">
+                                    <Image
+                                            src="/assets/Icons/downloadIcon.svg"
+                                            alt="Clip Image"
+                                            width={20}
+                                            height={20}
+                                        />
+                                    선택파일 다운로드
+                                </Button>
+                                </div>
+                                
+                                <div className='flex justify-center w-full'>
+                                <Pagination
+                                    isCompact
+                                    showControls
+                                    showShadow
+                                    color="primary"
+                                    page={page}
+                                    total={pages}
+                                    onChange={(page) => setPage(page)}
+                                />
+                                </div>
+                            </div>
+                            }
+                            
+                        >
+                            <TableHeader>
+                            <TableColumn className="flex justify-center items-center">
+                                <Checkbox
+                                onClick={() => {
+                                    if (allListCheckedPageNumbers.includes(page)) {
+                                    setAllListCheckedPageNumbers(
+                                        allListCheckedPageNumbers.filter(
+                                        (number) => number !== page
+                                        )
+                                    );
+                                    setClickedRowIds(
+                                        clickedRowIds.filter(
+                                        (id) =>
+                                            !currentData
+                                            .map((item: any) => item.number)
+                                            .includes(id)
+                                        )
+                                    );
+                                    } else {
+                                    setClickedRowIds([
+                                        ...clickedRowIds,
+                                        ...currentData.map((item: any) => item.number),
+                                    ]);
+                                    setAllListCheckedPageNumbers([
+                                        ...allListCheckedPageNumbers,
+                                        page,
+                                    ]);
+                                    }
+                                }}
+                                className={`size-[14px] rounded-[2px] bg-transparent`}
+                                isSelected={allListCheckedPageNumbers.includes(page)}
+                                ></Checkbox>
+                            </TableColumn>
 
+                            <TableColumn ><span className='w-[55px]'>번호</span></TableColumn>
+                            <TableColumn ><span className='w-[320px]'>제목</span></TableColumn>
+                            <TableColumn ><span className='w-[65px]'>작성자</span></TableColumn>
+                            <TableColumn ><span className='w-[21px]'>쪽수</span></TableColumn>
+                            <TableColumn ><span className='w-[21px]'>연회원 점수</span></TableColumn>
+                            <TableColumn ><span className='w-[21px]'>포인트</span></TableColumn>
+                            <TableColumn ><span className='w-[90px]'>게시판</span></TableColumn>
+
+                
+                            {/* <TableColumn>상세보기</TableColumn> */}
+                            </TableHeader>
+                            <TableBody>
+                            {items.map((row) => (
+                                <TableRow key={row.id} className="border-b-1">
+                                <TableCell>
+                                    <Checkbox
+                                    className={`text-center size-[14px] rounded-[2px]`}
+                                    onClick={() => {
+                                        if (clickedRowIds.includes(row.number)) {
+                                        setClickedRowIds(
+                                            clickedRowIds.filter((id) => id !== row.number)
+                                        );
+                                        } else {
+                                        setClickedRowIds([...clickedRowIds, row.number]);
+                                        }
+                                    }}
+                                    isSelected={clickedRowIds.includes(row.number)}
+                                    ></Checkbox>
+                                </TableCell>
+                                <TableCell>
+                                    <span className='text-[#868F9A] w-[50px]'>
+                                        {row.number}
+                                    </span>
+                                    
+                                </TableCell>
+                                <TableCell >
+                                    <div className="flex w-[311px] items-start justify-start gap-2">
+                                    <span>{row.title}</span>
+                                    <Image
+                                        src="/assets/Icons/Attach.svg"
+                                        alt="Clip Image"
+                                        width={12}
+                                        height={12}
+                                    />
+                                    </div>
+                                </TableCell>
+                                <TableCell>
+                                    <span className='text-[#868F9A] w-[60px]'>
+                                    {row.author}
+                                    </span>
+                                    
+                                </TableCell>
+                                <TableCell className='w-[21px]'><span className='w-[21px]'>{row.numberOfPages}</span></TableCell>
+                                <TableCell className='w-[21px]'><span className='w-[21px]'>{row.annualMemberScore}</span></TableCell>
+                                <TableCell className='w-[21px]'><span className='w-[21px]'>{row.point}</span></TableCell>
+                                <TableCell className='w-[80px]'>
+                                    <span className='text-[#868F9A] w-[100px]'>
+                                        {row.noticeBoard}
+                                    </span>
+                                </TableCell>
+
+                                
+                                {/* <TableCell>
+                                    <Link
+                                    href="/admin/membership/membership-management/1"
+                                    className="text-mainPurple underline underline-offset-2"
+                                    >
+                                    {row.viewDetails}
+                                    </Link>
+                                </TableCell> */}
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </article>
 
                 </div>
             </div>
