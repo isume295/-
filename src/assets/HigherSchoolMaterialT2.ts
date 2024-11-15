@@ -7,7 +7,7 @@ const demo = [
       numberOfPages: "5",
       annualMemberScore: "0.5",
       point: "1,000",
-      noticeBoard: "2025 수특, 수완",
+      noticeBoard: "공국(천 김수)",
 
     },
   ];

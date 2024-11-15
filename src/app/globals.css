@@ -4,9 +4,14 @@ body {
     font-family: 'Pretendard', sans-serif;
 }
 
-
 @tailwind base;
+
+/* Add global styles here */
+@layer base {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
-
-

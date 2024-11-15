@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Header: React.FC = () => {
+const Header2: React.FC = () => {
   return (
     <div className="flex flex-col items-center">
       {/* First Layer */}
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           />
 
           <div className="px-[30px] py-[20px] font-bold">
-            <span className="text-[16px] w-[55px] h-[22px]"> 
+            <span className="text-[16px] text-[#42A8FD] w-[55px] h-[22px]"> 
               고등국어{" "}
             </span>
             <span className="text-[14px] text-[#868F9A]"> (모의고사, EBS, 교과서)</span>
@@ -92,4 +92,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Header2;

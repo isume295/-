@@ -2,7 +2,7 @@
 "use client"; // <-- Add this line at the top
 
 import { Button } from "@nextui-org/react";
-import MembershipFormPage from "./(joinTheMembership)/MembershipFormPage/page";
+import MembershipFormPage from "./(3joinTheMembership)/MembershipFormPage/page";
 
 const Page = () => {
   return (

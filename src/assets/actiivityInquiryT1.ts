@@ -1,9 +1,9 @@
 const demo = [
     {
       id: 0,
-      title: "추가 결제는 없나요?",
+      title: "결제가 안 되는데 어떻게 해요?",
       creationDate: "2024.11.05",
-      situation: "대기중",
+      situation: "답변완료",
     //   numberOfPages: "5",
     //   annualMemberScore: "0.5",
     //   point: "1,000",
