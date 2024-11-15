@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { NextUIProvider } from "@nextui-org/react";
 
 export const metadata: Metadata = {
-  title: "트로피 - NexaCode",
+  title: "NexaCode",
   description: "Created by Nexacode - 트로피",
 };
 
