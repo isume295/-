@@ -30,7 +30,7 @@ const DropDown = ({
               `${selectStyles} border-1 border-[#D2D5D6]  rounded-[5px] text-mainGray`,
             ],
             trigger: [`${insideStyles}  bg-[#ffffff] `],
-            value: ["text-[15px] "],
+            value: ["text-[12px] "],
           }}
           disallowEmptySelection={true}
           defaultSelectedKeys={[defaultSelectedKeys]}

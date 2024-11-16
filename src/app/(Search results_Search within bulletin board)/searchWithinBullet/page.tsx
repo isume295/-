@@ -22,7 +22,7 @@ import {
 
 const SearchWithinBullet = () => {
         const options = [
-            { key: "1", label: "전체" },      
+            { key: "1", label: "고1 모의" },      
         ]
         // Pagination Logic
         const [page, setPage] = useState(1); 
@@ -54,14 +54,14 @@ const SearchWithinBullet = () => {
 
 
         {/* Sidebar and the right side */}
-        <div className='flex flex-row  justify-between w-[1080px] gap-[36px]'>
+        <div className='flex flex-row  justify-between w-[1080px] h-[2570px] gap-[36px]'>
             {/* SideBar */}
             <Sidebar2 />
 
             {/* RightSide */}
             <div className='flex flex-col items-center justify-center w-[824px] h-[969px] pt-[24px] pb-[24px] gap-[40px]'>
                 {/* Top */}
-                <div className='flex flex-col items-center justify-center w-[824px] h-[56px] py-4 gap-[12px]'>
+                <div className='flex flex-col items-center justify-center w-[824px] h-[86px] gap-[12px]'>
                     <div className='flex flex-col items-center justify-center w-[824px] h-[34px]'>
                         <h3 className='font-bold text-[24px]'>검색 결과</h3>
                     </div>
@@ -90,14 +90,14 @@ const SearchWithinBullet = () => {
                 </div>
 
                 
-                <div className='flex flex-col items-center justify-center w-[824px] h-[795px] gap-[10px] pt-10'>
+                <div className='flex flex-col items-center justify-center w-[824px] h-[795px] gap-[1px] pt-10'>
 
-                    <div className='flex flex-row items-start justify-start w-[824px] h-[20px]'>
+                    <div className='flex flex-row items-start justify-start pl-3 min-w-[824px] h-[20px]'>
                         <h3 className=' text-[#868F9A] text-[14px]'>검색어<span className='text-[#8D64F8]'>(사미인곡)</span>으로 검색한 결과</h3>
                     </div>
 
                     {/* Bottom  */}
-                    <div className='w-[824px] h-[765px] gap-[24px]'>
+                    <div className='max-w-[824px] h-[795px] gap-[10px]'>
                         <article className="">
                             <Table
                                 aria-label="Data Table"
@@ -289,3 +289,9 @@ const SearchWithinBullet = () => {
 }
 
 export default SearchWithinBullet;
+
+ // th: [
+                            //     "relative px-[40px] py-[10px] font-bold text-[14px] bg-[#F3F4F6] text-[#868F9A] w-full max-w-[824px] overflow-x-auto h-[41px] ",
+                            //     // "after:content-[''] after:absolute after:right-0 after:top-2 after:bottom-2 after:w-[1px] after:bg-gray-300",
+                            // ],
+                            // td: ["py-[10px]  w-full max-w-[824px] overflow-x-auto h-[40px] px-[20px] text-[14px] text-center font-normal text-base text-[#363941] "],
