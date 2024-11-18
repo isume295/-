@@ -105,6 +105,7 @@ const PostDetials = () => {
                             </div>
                         </div>
 
+
                         <div className="flex flex-row items-center justify-center w-[207px] h-[40px] gap-[8px]">
                             <Button className='w-[103px] h-[40px] rounded-md py-[10px] px-[14px] bg-[#E0F1FF] text-[14px] text-[#42A8FD] font-bold gap-[6px]'>
                                 장바구니 담기
@@ -179,7 +180,6 @@ const PostDetials = () => {
                                 <p className='text-[14px]'>5</p>
                             </div>
                         </div>
-
 
 
                         {/* RIGHT SIDE */}
