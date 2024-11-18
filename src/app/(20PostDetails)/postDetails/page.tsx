@@ -58,7 +58,7 @@ const PostDetials = () => {
                 {/* RightSide */}
                 <div className='flex flex-col items-center justify-center w-[814px] h-[814px] gap-[24px]'>
                     {/* Heading  */}
-                    <div className='flex flex-row items-center justify-between w-full h-[76px]'>
+                    <div className='flex flex-row items-center justify-between border-b w-full h-[76px]'>
                         <div className='w-[752] h-[28]'>
                             <h3 className='font-bold text-[20px]'>서동요 (김영현) (25 수완) (12문제)</h3>
                         </div>
@@ -73,15 +73,14 @@ const PostDetials = () => {
                         </div>
                     </div>
 
-                    <hr className="w-full border-t-1 border-[rgb(207,212,218)]" />
 
 
                     {/* --- --- --- --- - MIDDLE - --- --- ---   */}
 
                     <div className='flex flex-row items-center justify-between p-[16px] border rounded-lg w-[814px] h-[72px]'>
-                        <div className="flex flex-row items-center justify-between w-[565px] h-[20px] gap-[20px]">
+                        <div className="flex flex-row items-start justify-start w-[565px] h-[20px] gap-[20px]">
                             <div className="flex flex-row items-center justify-center w-[250px] h-[20px] gap-[8px]">
-                                <p className='text-[14px] f'>
+                                <p className='text-[14px]'>
                                     서동요 (김영현) (25 수완) (12문제)
                                 </p>
 
@@ -151,12 +150,12 @@ const PostDetials = () => {
 
 
                     {/* --- ---- ---- ----  TextBox  ---- --- --- ---  */}
-                    <div className='w-[814px] h-[250px] items-start justify-start border'>
+                    <div className='w-[814px] h-[250px] items-start justify-start'>
                         <p className='text-[16px]'> 본문영역 </p>
                     </div>
 
                     {/* Icons  */}
-                    <div className='flex flex-row items-center justify-between w-[814px] h-[33px]'>
+                    <div className='flex flex-row items-center justify-between w-[800px] h-[33px]'>
                         {/* LEFT SIDE  */}
                         <div className="w-[100px] h-[20px] flex flex-row items-center justify-between gap-[24px]">
                             <div className="flex flex-row w-[41px] h-[20px] items-center justify-center gap-[6px]">
@@ -183,42 +182,85 @@ const PostDetials = () => {
 
 
 
-                        {/* LEFT SIDE  */}
+                        {/* RIGHT SIDE */}
                         <div className="flex flex-row items-center justify-center w-[210px] h-[33px] gap-[8px]">
-                            <div className="w-[72px] h-[33px]">
-                                {/* Dropdown */}
-                                <DropDown
-                                    options={options}
-                                    defaultSelectedKeys="1"
-                                    selectStyles="w-[72px] h-[33px] text-[12px]"
-                                    insideStyles="py-[4px] px-[6px] w-[72px] h-[33px] text-[12px] rounded-md"
-                                />
+                            {/* Dropdown 1 */}
+                            <DropDown
+                                options={options}
+                                defaultSelectedKeys="1"
+                                selectStyles="w-[72px] h-full box-border" 
+                                insideStyles="px-[6px] rounded-md"
+                            />
+
+                            {/* Dropdown 2 */}
+                            <DropDown
+                                options={options}
+                                defaultSelectedKeys="2"
+                                selectStyles="w-[72px] h-full box-border"
+                                insideStyles="px-[6px] rounded-md"
+                            />
+
+                            {/* Button */}
+                            <Button
+                                className="w-[45px] h-full box-border bg-[#ECEDF1] text-[12px] text-[#868F9A] rounded-md p-0"
+                            >
+                                목록
+                            </Button>
+                        </div>
+
+
+                    </div>
+
+
+                    <hr className="w-full border-t-1 border-[rgb(207,212,218)] " />
+
+
+                    {/* Bottom ID  */}
+                    <div className="w-[814px] h-[198px]">
+                        <h3 className='font-bold text-[16px]'>댓글 <span className='text-[#8D64F8]'>5</span></h3>    
+
+                        <div className="flex flex-col items-start w-[814px] h-[176px]">
+                            <div className="flex flex-row w-full h-[88px] items-start justify-start border-b py-[20px] gap-[20px]">
+                                <div className="text-[16px] text-[#868F9A] font-bold">id1234</div>
+
+                                <div className="flex flex-col items-start w-[134px] h-[24px] gap-1">
+                                    <div className="">반갑습니다</div>
+                                    <div className="text-[14px] text-[#868F9A]">2024.11.01</div>
+                                </div>
                             </div>
 
-                            <div className="w-[72px] h-[33px]">
-                                {/* Dropdown */}
-                                <DropDown
-                                    options={options}
-                                    defaultSelectedKeys="2"
-                                    selectStyles="w-[72px] h-[33px] text-[12px]"
-                                    insideStyles="py-[4px] px-[6px] w-[72px] h-[33px] text-[12px] rounded-md"
-                                /> 
-                            </div>
+                            <div className="flex flex-row h-[88px] items-start justify-start py-[20px] gap-[20px]">
+                                <div className="text-[16px] text-[#868F9A] font-bold">aaa111</div>
 
-                                <Button className="w-[21px] h-[33px] rounded-md py-[4px] px-[6px] text-[12px] text-[#868F9A]">
-                                    목록
-                                </Button>
+                                <div className="flex flex-col items-start w-[134px] h-[24px] gap-1">
+                                    <div className="">안녕하세요!</div>
+                                    <div className="text-[14px] text-[#868F9A]">2024.10.01</div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
 
-                    <hr className="w-full border-t-1 border-[rgb(207,212,218)] " />
 
-                    {/* Bottom  */}
+                    {/* INPUT FIELD  */}
 
-                    <div></div>
+                    <div className="flex flex-row items-center justify-between w-[814px] h-[40px]">
+                        {/* Input Field */}
+                        <InputNoLabel
+                            placeholder="댓글을 입력해 주세요"
+                            inputParentStyles="w-[738px] h-full rounded-md py-[10px] px-[16px]"
+                        />
+                        
+                        {/* Button */}
+                        <Button className="w-[64px] h-full py-[10px] px-[20px] bg-[#353A46] text-[14px] text-[#FFFFFF] rounded-md">
+                            등록
+                        </Button>
+                    </div>
+                    
 
-                    <div></div>
+
+
+
 
                     <div></div>
 
