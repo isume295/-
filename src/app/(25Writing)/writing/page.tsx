@@ -108,8 +108,8 @@ const Writing = () => {
                         <div className="flex flex-row items-center justify-center w-[824px] h-[444px]">
                             <div className="flex items-center justify-center w-[83px] h-[444px] py-[12px] gap-[10px] text-[14px] font-bold bg-[#F3F4F6]"> 내용 </div>
 
-                            <div className="flex items-center w-[741px] h-[444px] p-[8px] gap-[10px]">
-                                <div className="mt-6">
+                            <div className="flex items-center w-[741px] h-[400px] p-[8px]">
+                                <div className="w-[740px]">
                                     <JoditEditor
                                         ref={editor}
                                         config={config}
