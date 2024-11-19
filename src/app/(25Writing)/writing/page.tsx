@@ -9,6 +9,9 @@ import { PostDetailsT1 } from '@/assets/PostDetailT1';
 import Image from 'next/image';
 import InputNoLabel from '@/components/InputNoLable';
 import DropDown from '@/components/DropDown';
+import JoditEditor from "jodit-react";
+import { useRef } from 'react';
+
 
 import {
     Table,
@@ -22,6 +25,16 @@ import {
 
 
 const Writing = () => {
+    const editor = useRef(null);
+    const config = {
+        readonly: false,
+        uploader: {
+            insertImageAsBase64URI: true, // Upload images as base64 URI
+            url: "your_upload_endpoint_here", // Endpoint to handle image uploads
+        },
+        minHeight: "500px",
+    };
+
     const options = [
         { key: "1", label: "이전글" },
         { key: "2", label: "다음글" }
@@ -96,12 +109,14 @@ const Writing = () => {
                             <div className="flex items-center justify-center w-[83px] h-[444px] py-[12px] gap-[10px] text-[14px] font-bold bg-[#F3F4F6]"> 내용 </div>
 
                             <div className="flex items-center w-[741px] h-[444px] p-[8px] gap-[10px]">
-                                <Image
-                                    src="/assets/Images/WritingArea.svg"
-                                    alt="Clip Image"
-                                    width={725}
-                                    height={428}
-                                />
+                                <div className="mt-6">
+                                    <JoditEditor
+                                        ref={editor}
+                                        config={config}
+                                        value=""
+                                        onChange={(newContent) => console.log(newContent)}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,6 +125,8 @@ const Writing = () => {
 
 
             </div>
+
+
 
 
             <Footer />

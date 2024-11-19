@@ -9,6 +9,7 @@ import { PostDetailsT1 } from '@/assets/PostDetailT1';
 import Image from 'next/image';
 import InputNoLabel from '@/components/InputNoLable';
 import DropDown from '@/components/DropDown';
+import {RadioGroup, Radio} from "@nextui-org/react";
 
 import {
     Table,
@@ -111,10 +112,20 @@ const DataRegistration = () => {
                                     공지글 여부
                                 </div>
 
-                                <div className="w-[191px] h-[36px]">
-
+                                <div className="flex flex-row w-[191px] h-[36px]">
+                                        <RadioGroup
+                                        orientation='horizontal'
+                                        >
+                                        
+                                        </RadioGroup>
                                 </div>
                             </div>
+
+
+
+
+
+
 
                             <div className=""></div>
 
