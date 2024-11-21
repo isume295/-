@@ -15,7 +15,7 @@ const InputNoLabel = ({
   inputParentStyles?: string;
   inputStyles?: string;
   placeholder?: string;
-  type?: "text" | "number" | "date";
+  type?: "text" | "number" | "date" | "password";
 }) => {
   return (
     <section className={`flex items-center gap-7 ${mainStyles}`}>
