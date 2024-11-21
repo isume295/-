@@ -9,6 +9,13 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+    },
+    
     extend: {
       fontFamily: {
         noto: ["Noto Sans KR", "sans-serif"],
@@ -27,6 +34,8 @@ const config: Config = {
         mainRed: "#F05858",
       },
     },
+
+    
   },
   darkMode: "class",
   plugins: [nextui()],
