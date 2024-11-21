@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo } from 'react'
@@ -9,10 +10,8 @@ import { PostDetailsT1 } from '@/assets/PostDetailT1';
 import Image from 'next/image';
 import InputNoLabel from '@/components/InputNoLable';
 import DropDown from '@/components/DropDown';
-import JoditEditor from "jodit-react";
+import dynamic from 'next/dynamic';
 import { useRef } from 'react';
-
-
 import {
     Table,
     TableHeader,
@@ -22,6 +21,10 @@ import {
     TableCell,
     Pagination,
 } from "@nextui-org/react";
+
+
+// Dynamically import the JoditEditor to prevent SSR issues
+const JoditEditor = dynamic(() => import('jodit-react'), { ssr: false });
 
 
 const Writing = () => {
