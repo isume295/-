@@ -84,8 +84,6 @@ const BulletInBoardCommunity = () => {
                                 shadow="none"
                                 classNames={{
                                     wrapper: "min-w-[824px] max-h-[1000px]",
-
-
                                 }}
                                 bottomContent={
                                     <div className="flex flex-col items-center justify-center w-full pt-3 gap-[40px]">
