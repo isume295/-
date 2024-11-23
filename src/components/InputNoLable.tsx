@@ -28,7 +28,7 @@ const InputNoLabel = ({
             onValueChange={handelChangeText}
             classNames={{
               input: [
-                "placeholder:text-[#A1A9A3] placeholder:text-[14px] text-[15px]",
+                "placeholder:text-[#A1A9A3] placeholder:text-[11px] sm:placeholder:text-[14px] text-[15px]",
               ],
               inputWrapper: [
                 `${inputStyles}  bg-[#ffffff] border-[1px] border-[#D2D5D6] rounded-[5px] `,
