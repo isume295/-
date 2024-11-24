@@ -37,7 +37,7 @@ const Sidebar = () => {
                         width={12}
                         height={12}
                     />
-             </div>
+              </div>
 
 
 
