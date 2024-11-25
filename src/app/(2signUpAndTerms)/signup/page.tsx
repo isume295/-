@@ -8,27 +8,29 @@ const SignUp = () => {
   return (
     <div className="min-h-[1117px] flex flex-col items-center justify-between"> 
       {/* Include Header */}
-      <Header />
+      <div className="sm:block hidden">
+        <Header />
+      </div>
 
       <hr className="w-full border-t-1 border-[rgb(207,212,218)]  py-5 "/>
 
       {/* Form Container */}
-      <div className="flex flex-col items-center justify-start w-[428px] h-[293px] gap-[40px] mt-10 mb-10 flex-1">
-        <h2 className="w-[428px] h-[34px] text-center text-[24px] font-semibold text-black">회원가입</h2>
+      <div className="flex flex-col items-center justify-start w-full sm:max-w-[428px] h-[293px] gap-5 sm:gap-[40px] mt-5 mb-5 sm:mt-10 sm:mb-10 flex-1">
+        <h2 className="w-full sm:max-w-[428px] h-[34px] text-center text-[20px] sm:text-[24px] font-semibold text-black">회원가입</h2>
 
         {/* Checkbox Group and Button Container */}
-        <div className="flex flex-col items-center w-full gap-[32px]">
+        <div className="flex flex-col items-center sm:w-full w-[250px] gap-[32px]">
           {/* Checkbox Group */}
-          <div className="flex flex-col items-start w-[428px] gap-[10px] flex-grow">
+          <div className="flex flex-col items-start w-full sm:max-w-[428px] gap-[5px] sm:gap-[10px] ">
           
-              <div className="flex items-center justify-between w-full">
-                <Checkbox defaultSelected className="py-[12px] text-[22px]" value="terms">
+              <div className="flex items-center justify-between sm:max-w-[428px] w-full">
+                <Checkbox defaultSelected className="py-2  sm:py-[12px] sm:text-[22px]" value="terms">
                     전체 동의
                 </Checkbox>
               </div>
               <hr className="w-full border-t-1 border-[rgb(207,212,218)]" />
 
-              <div className="flex items-center justify-between w-[428px]">
+              <div className="flex items-center justify-between w-full sm:max-w-[428px]">
                 <Checkbox defaultSelected color="default" className="py-[12px] text-[22px]" value="privacy">
                     (필수) 개인정보처리방침
                 </Checkbox>
@@ -65,7 +67,7 @@ const SignUp = () => {
           </div>
 
           {/* Button remains at the bottom */}
-          <Button className="w-[428px] h-[42px] px-[20px] py-[10px] bg-[#42A8FD] hover:bg-[#489de2] font-semibold text-white rounded-md">
+          <Button className="w-full sm:w-[428px] h-[42px] px-[20px] py-[10px] bg-[#42A8FD] hover:bg-[#489de2] font-semibold text-white rounded-md">
               본인 확인 후 가입하기
           </Button>
         </div>
